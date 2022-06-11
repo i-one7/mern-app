@@ -19,12 +19,12 @@ mongoose.connect( config.atlas || config.localhost , {
 });
 const dbase = mongoose.connection;
 dbase.on("error", (error) => console.error(error));
-dbase.once("open", () => console.info("Database connected!"));
+dbase.once("open", () => console.info("Mongoose connected!"));
 
 app.use(cors());
 app.use(express.json());
 app.use(router);
-app.listen(config.port, () => console.log(`Server running at port ${config.port}`));
+app.listen(config.port || 8080, () => console.log(`Server running at port ${config.port}`));
 
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/build"));
