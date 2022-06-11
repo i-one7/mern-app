@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const DataContext = createContext();
 const URL = "https://mernstackhost.herokuapp.com/activity";
@@ -9,6 +9,10 @@ const DataProvider = (props) => {
 		title: "",
 		note: "",
 	});
+
+	useEffect(() => {
+		getList();
+	}, [])
 	
 	const getList = async () => {
 		const response = await axios.get(URL);
