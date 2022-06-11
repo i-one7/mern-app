@@ -2,7 +2,7 @@ import axios from "axios";
 import { createContext, useState } from "react";
 
 const DataContext = createContext();
-const URL = "mongodb+srv://ione:ione@trainingcluster.rpvqk.mongodb.net/?retryWrites=true&w=majority/db_activity"
+const URL = "http://trainingcluster.rpvqk.mongodb.net/db_activity"
 const DataProvider = (props) => {
 	const [data, setData] = useState({
 		activity: [],
