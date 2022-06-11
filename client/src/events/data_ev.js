@@ -2,7 +2,7 @@ import axios from "axios";
 import { createContext, useState } from "react";
 
 const DataContext = createContext();
-const URL = "http://trainingcluster.rpvqk.mongodb.net/db_activity"
+const URL = "https://mernstackhost.herokuapp.com/activity";
 const DataProvider = (props) => {
 	const [data, setData] = useState({
 		activity: [],
