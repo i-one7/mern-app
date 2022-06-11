@@ -24,7 +24,7 @@ dbase.once("open", () => console.info("Mongoose connected!"));
 app.use(cors());
 app.use(express.json());
 app.use(router);
-app.listen(config.port || 5000, () => console.log(`Server running at port ${config.port}`));
+app.listen(config.port || 80, () => console.log(`Server running at port ${config.port}`));
 
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static("client/build"));
