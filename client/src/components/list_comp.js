@@ -3,7 +3,7 @@ import { Buttons } from "./button";
 
 const ListContent = (props) => {
 	return (
-		<div className="flex justify-between px-8 py-4">
+		<div className="flex justify-between px-8 py-4 h-20">
 			<div className="flex gap-2 items-center">
 				<Buttons className="p-2">
 					<HiOutlineStar className="text-2xl" />

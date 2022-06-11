@@ -5,7 +5,7 @@ const ThemeProvider = ({ children }) => {
 	const [darkMode, setDarkMode] = useState(false);
 
 	useEffect(() => {
-		document.body.classList.toggle("bg-primary-dark", darkMode);
+		document.body.classList.toggle("bg-slate-900", darkMode);
 	}, [darkMode]);
 
 	return (

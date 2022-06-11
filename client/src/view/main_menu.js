@@ -39,15 +39,23 @@ const MainMenu = () => {
 					} absolute w-full h-full bg-opacity-10 transition duration-300 backdrop-filter backdrop-blur-sm`}></div>
 			</section>
 			<section className="w-full flex justify-center">
-				<Cards className="bg-primary-light w-1/2 absolute top-52">
-					<div className="w-full flex justify-between items-center px-0 py-4">
+				<Cards
+					className={` ${
+						darkMode
+							? "bg-slate-800 border-slate-700 text-slate-300"
+							: " bg-slate-100 border-slate-200"
+					} w-1/2 absolute top-52`}>
+					<div className="w-full flex justify-between items-center px-8 py-4">
 						<span className="text-xl font-semibold">Your Activity</span>
-						<Buttons onClick={() => setModal(!modal)} className="bg-slate-600 text-white p-1">
+						<Buttons onClick={() => setModal(!modal)}>
 							{" "}
-							<HiOutlinePlusCircle className="text-xl" />{" "}
+							<HiOutlinePlusCircle className="text-4xl" />{" "}
 						</Buttons>
 					</div>
-					<div className="w-full overflow-y-auto h-96">
+					<div
+						className={`${
+							darkMode ? "divide-gray-700" : "divide-gray-200"
+						} w-full overflow-y-auto flex flex-col divide-y-2 h-80 scrollbar-hide`}>
 						{data.activity.map((values, key) => {
 							return (
 								<ListContent
@@ -63,14 +71,14 @@ const MainMenu = () => {
 
 			<Modals isOpen={modal}>
 				<form onSubmit={createList}>
-					<div className="w-full flex justify-between items-center">
-						<span className="font-semibold text-lg">add new list</span>
+					<div className="w-full flex justify-between items-center py-4">
+						<span className="font-semibold text-xl">add new list</span>
 						<Buttons className="text-3xl" onClick={() => setModal(!modal)}>
 							{" "}
-							<HiOutlineXCircle className="text-2xl" />{" "}
+							<HiOutlineXCircle className="text-4xl" />{" "}
 						</Buttons>
 					</div>
-					<div className="w-full flex flex-col gap-2">
+					<div className="w-full flex flex-col gap-2 py-4">
 						<Inputs
 							onChange={(e) =>
 								setData({
@@ -89,10 +97,14 @@ const MainMenu = () => {
 						/>
 					</div>
 					<div className="w-full flex items-center justify-center gap-2">
-						<Buttons type="submit" className="bg-slate-600 w-1/6 py-2 text-sm text-white">
+						<Buttons
+							type="submit"
+							className="bg-slate-600 rounded-sm w-32 py-2 text-sm text-white">
 							add
 						</Buttons>
-						<Buttons className="bg-slate-600 w-1/6 py-2 text-sm text-white">clear</Buttons>
+						<Buttons className="bg-slate-600 w-32 rounded-sm py-2 text-sm text-white">
+							clear
+						</Buttons>
 					</div>
 				</form>
 			</Modals>

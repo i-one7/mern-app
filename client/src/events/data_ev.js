@@ -12,6 +12,7 @@ const DataProvider = (props) => {
 
 	useEffect(() => {
 		getList();
+		// eslint-disable-next-line
 	}, [])
 	
 	const getList = async () => {

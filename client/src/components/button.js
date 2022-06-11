@@ -24,7 +24,7 @@ const Buttons = (props) => {
 	return (
 		<button
 			onClick={props.onClick}
-			className={`${props.className} text-sm font-normal flex gap-1 rounded-full justify-center`}>
+			className={`${props.className} text-sm font-normal flex gap-1 justify-center`}>
 			{props.children}
 		</button>
 	);
