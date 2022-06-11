@@ -1,17 +1,17 @@
 import axios from "axios";
+import router from "../../../routes/router";
 import { createContext, useState } from "react";
 
 const DataContext = createContext();
-const URL = "http://localhost:5000/activity";
 const DataProvider = (props) => {
 	const [data, setData] = useState({
 		activity: [],
 		title: "",
 		note: "",
 	});
-
+	
 	const getList = async () => {
-		const response = await axios.get(`${URL}`);
+		const response = await axios.get(router);
 		setData({
 			...data,
 			activity: response.data,
