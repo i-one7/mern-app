@@ -1,8 +1,8 @@
 import axios from "axios";
-import router from "../../../routes/router";
 import { createContext, useState } from "react";
 
 const DataContext = createContext();
+const URL = "mongodb+srv://ione:ione@trainingcluster.rpvqk.mongodb.net/?retryWrites=true&w=majority/db_activity"
 const DataProvider = (props) => {
 	const [data, setData] = useState({
 		activity: [],
@@ -11,7 +11,7 @@ const DataProvider = (props) => {
 	});
 	
 	const getList = async () => {
-		const response = await axios.get(router);
+		const response = await axios.get(URL);
 		setData({
 			...data,
 			activity: response.data,
